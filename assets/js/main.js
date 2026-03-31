@@ -136,17 +136,7 @@ function initVideoGallery() {
 initVideoGallery();
 
 const spiritualAudio = document.getElementById('spiritual-audio');
-const audioToggle = document.querySelector('[data-audio-toggle]');
 let audioReady = false;
-
-function updateAudioButton() {
-  if (!audioToggle) return;
-
-  const isPlaying = !!spiritualAudio && !spiritualAudio.paused;
-  audioToggle.classList.toggle('is-playing', isPlaying);
-  audioToggle.setAttribute('aria-pressed', String(isPlaying));
-  audioToggle.textContent = isPlaying ? 'Pause Spiritual Audio' : 'Play Spiritual Audio';
-}
 
 async function startSpiritualAudio() {
   if (!spiritualAudio || !audioReady) return false;
@@ -154,28 +144,22 @@ async function startSpiritualAudio() {
   try {
     spiritualAudio.volume = 0.45;
     await spiritualAudio.play();
-    updateAudioButton();
     return true;
   } catch {
-    updateAudioButton();
     return false;
   }
 }
 
 function setupSpiritualAudio() {
-  if (!spiritualAudio || !audioToggle) return;
+  if (!spiritualAudio) return;
 
   spiritualAudio.addEventListener('canplaythrough', () => {
     audioReady = true;
     startSpiritualAudio();
   });
 
-  spiritualAudio.addEventListener('play', updateAudioButton);
-  spiritualAudio.addEventListener('pause', updateAudioButton);
-  spiritualAudio.addEventListener('ended', updateAudioButton);
   spiritualAudio.addEventListener('error', () => {
-    audioToggle.textContent = 'Audio File Missing';
-    audioToggle.disabled = true;
+    console.warn('Spiritual audio file could not be loaded.');
   });
 
   const retryAudioPlayback = async () => {
@@ -191,20 +175,8 @@ function setupSpiritualAudio() {
   document.addEventListener('touchstart', retryAudioPlayback);
   document.addEventListener('keydown', retryAudioPlayback);
 
-  audioToggle.addEventListener('click', async () => {
-    if (!audioReady) return;
-
-    if (spiritualAudio.paused) {
-      await startSpiritualAudio();
-      return;
-    }
-
-    spiritualAudio.pause();
-    updateAudioButton();
-  });
-
   spiritualAudio.load();
-  updateAudioButton();
+  startSpiritualAudio();
 }
 
 setupSpiritualAudio();

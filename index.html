@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISKCON Rajampet</title>
+    <meta
+      name="description"
+      content="ISKCON Rajampet temple website with timings, activities, festivals, donations, contact information, and Vaishnava Calendar access."
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#home" aria-label="ISKCON Rajampet home">
+          <img src="assets/images/iskcon-logo.png" alt="ISKCON Rajampet logo" class="brand-logo main-logo" />
+          <div class="brand-text">
+            <strong class="clr-orange">ISKCON</strong>
+            <span class="clr-blue">RAJAMPET</span>
+          </div>
+        </a>
+        <button class="nav-toggle" type="button" data-nav-toggle>Menu</button>
+        <nav class="nav-links" data-nav>
+          <a href="#about">About</a>
+          <a href="#timings">Timings</a>
+          <a href="#activities">Activities</a>
+          <a href="#festivals">Festivals</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#donate">Donate</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <div class="flute-icon">🎵</div>
+            <p class="eyebrow clr-red">International Society for Krishna Consciousness</p>
+            <h1 class="color-stack">Bhakti, seva, and spiritual joy in the heart of Rajampet.</h1>
+            <p class="lead clr-black">
+              <span class="clr-orange">A welcoming devotional space</span> for
+              <span class="clr-green">darshan, kirtan</span>,
+              <span class="clr-blue">Bhagavad Gita study</span>,
+              <span class="clr-navy">family satsang</span>,
+              <span class="clr-pink">youth guidance</span>, and
+              <span class="clr-darkgreen">temple seva</span>.
+            </p>
+            <p class="lead telugu clr-rose">
+              రాజంపేట నడిబొడ్డున భక్తి, సేవ మరియు ఆధ్యాత్మిక ఆనందం.
+              దర్శనం, కీర్తన, భగవద్గీత అధ్యయనం, కుటుంబ సత్సంగం, యువత మార్గదర్శనం మరియు ఆలయ సేవ కొరకు ఆహ్వానించదగిన భక్తి ప్రదేశం.
+            </p>
+            <div class="actions">
+              <a class="button primary clr-orange" href="#contact">Visit Temple</a>
+              <a class="button secondary clr-green" href="#donate">Donate</a>
+              <a class="button secondary clr-blue" href="#volunteer">Join Seva</a>
+              <a class="button secondary clr-navy" href="https://maps.app.goo.gl/GRNGwxrHqW1i2C7k7" target="_blank" rel="noreferrer">Open Map</a>
+            </div>
+          </div>
+          <div class="hero-card reveal delay-1">
+            <div class="hero-card-inner">
+              <span>ISKCON Rajampet Temple</span>
+              <strong class="clr-green">Darshan and devotional atmosphere at Rajampet</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="container">
+            <div class="section-heading reveal">
+                <h2>Register for Temple Association and Personal Updates</h2>
+                <p>
+                    Stay connected with ISKCON Rajampet. Register to receive updates on our activities, festivals, and special events.
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWxZJ-g_g_g_g_g_g_g_g_g_g_g_g_g_g_g_g_g_g_g_g/viewform?usp=sf_link" target="_blank" rel="noreferrer">Click here to register</a>.
+                </p>
+            </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+            <div class="cards two">
+                <article class="card reveal">
+                    <h3>For Youth</h3>
+                    <p>Special programs and guidance for young people to grow in Krishna consciousness.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdyNgrSCRxX6-cumrYdwluP10CGBvKU4TMnOJscQjFMb4w7Hg/viewform?usp=publish-editor" target="_blank" class="button primary">Join Us</a>
+                </article>
+                <article class="card reveal delay-1">
+                    <h3>For Grihasthas</h3>
+                    <p>Family-centered satsang, spiritual education, and community support.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoOUCzd02jRL9AIiHttqrHLIoYwqK-Ep0c-cY3yIpdl51WVw/viewform" target="_blank" class="button primary">Join Us</a>
+                </article>
+            </div>
+        </div>
+      </section>
+
+      <section class="section" id="video-gallery">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Videos</p>
+            <h2>spiritual memories</h2>
+          </div>
+          <div class="video-gallery-layout">
+            <div class="video-player-container">
+              <video id="main-video" controls muted playsinline preload="auto" poster="assets/images/video-poster.jpg">
+                <source src="assets/videos/iskcon 1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-play-hint">Tap to play</div>
+            </div>
+            <div class="video-controls">
+              <div class="video-dots-container"></div>
+              <div class="video-status" id="video-status">1 of 4</div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow clr-red">About ISKCON Rajampet</p>
+            <h2 class="clr-blue">A spiritual home for devotees, families, and seekers</h2>
+            <p>
+              This site is designed in a devotional, modern style inspired by temple websites like ISKCON Chennai,
+              but adapted for Rajampet with your own timings, media, social links, and temple identity.
+            </p>
+          </div>
+          <div class="cards three">
+            <article class="card reveal" style="background-color: gold;">
+              <h3>Mission</h3>
+              <p>
+                To spread Krishna consciousness through nama-sankirtana, scriptural wisdom, temple worship,
+                outreach, and compassionate seva.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="timings">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Temple Timings</p>
+            <h2>Daily darshan and devotional schedule</h2>
+          </div>
+          <div class="cards four">
+            <article class="card stat reveal">
+              <span>Mangala Arati</span>
+              <strong>4:30 AM</strong>
+            </article>
+            <article class="card stat reveal delay-1">
+              <span>Darshan</span>
+              <strong>7:30 AM to 8:30 AM</strong>
+            </article>
+            <article class="card stat reveal delay-2">
+              <span>Class Timings</span>
+              <strong>3:30 PM</strong>
+            </article>
+            <article class="card stat reveal delay-3">
+              <span>Sunday Program</span>
+              <strong>3:30 PM to 6:30 PM</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="activities">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Activities and Seva</p>
+            <h2>Devotional programs that can grow with your temple</h2>
+          </div>
+          <div class="cards three">
+            <article class="card reveal">
+              <h3>Daily and Weekly Programs</h3>
+              <ul>
+                <li>Mangala Arati and darshan</li>
+                <li>Nama japa and kirtan</li>
+                <li>Bhagavad Gita classes</li>
+                <li>Sunday satsang and prasadam</li>
+              </ul>
+            </article>
+            <article class="card reveal delay-1">
+              <h3>Youth and Children</h3>
+              <ul>
+                <li>Youth devotional guidance</li>
+                <li>Children spiritual learning</li>
+                <li>Family-centered programs</li>
+                <li>Festival participation</li>
+              </ul>
+            </article>
+            <article class="card reveal delay-2">
+              <h3>Temple Outreach</h3>
+              <ul>
+                <li>Annadanam</li>
+                <li>Book distribution</li>
+                <li>Harinam seva</li>
+                <li>Festival volunteer support</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section calendar-section" id="festivals">
+        <div class="container split">
+          <div class="calendar-callout reveal">
+            <p class="eyebrow">Vaishnava Calendar</p>
+            <h2>Festival highlights and calendar access</h2>
+            <p>
+              This section includes festival cards based on the Vaishnava Calendar reference you shared, plus a direct button to the full calendar page.
+            </p>
+            <div class="actions">
+              <a class="button primary" href="http://www.vaisnavacalendar.com/178/2026/03/" target="_blank" rel="noreferrer">Open Vaishnava Calendar</a>
+              <a class="button secondary" href="#announcements">See Announcements</a>
+            </div>
+          </div>
+          <div class="festival-list" data-festival-list></div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Gallery</p>
+            <h2>Temple moments, darshan, and devotional gatherings</h2>
+            <p>Photos from ISKCON Rajampet temple life, deity darshan, festivals, and community programs.</p>
+          </div>
+          <div class="photo-grid">
+            <article class="photo-card reveal">
+              <img src="assets/images/deity1.jpg.jpeg" alt="Radha Krishna deity darshan at ISKCON Rajampet" />
+              <h3 style="color: var(--primary);">Deity Darshan</h3>
+              <p style="color: var(--muted);">Sri Sri Radha Krishna in beautiful blue alankara.</p>
+            </article>
+            <article class="photo-card reveal delay-1">
+              <img src="assets/images/temple2.jpg.jpg" alt="Decorated temple altar at ISKCON Rajampet" />
+              <h3 style="color: var(--green);">Temple Altar</h3>
+              <p style="color: var(--text);">Sri Chaitanya’s beloved associates.</p>
+            </article>
+            <article class="photo-card reveal delay-2">
+              <img src="assets/images/temple1.jpg.jpg" alt="Harinam procession through the streets near the temple" />
+              <h3 style="color: var(--blue);">Harinam Seva</h3>
+              <p style="color: var(--muted);">Devotees chanting and serving through a joyful street procession.</p>
+            </article>
+            <article class="photo-card reveal delay-3">
+              <img src="assets/images/festival1.jpg.jpeg" alt="Festival deity decoration at ISKCON Rajampet" />
+              <h3 style="color: var(--pink);">Festival Decoration</h3>
+              <p style="color: var(--text);">Special festival alankara with flowers, lights, and devotional beauty.</p>
+            </article>
+            <article class="photo-card reveal delay-4">
+              <img src="assets/images/festival2.jpg.jpeg" alt="Devotional gathering and satsang program at ISKCON Rajampet" />
+              <h3 style="color: var(--purple);">Community Satsang</h3>
+              <p style="color: var(--muted);">Families and devotees gathered together for kirtan and spiritual association.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="donate">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Donate</p>
+            <h2>Support seva and temple activities</h2>
+            <p>Your donation area is ready for UPI, QR, bank details, and legal notes whenever you send them.</p>
+          </div>
+          <div class="cards two">
+            <article class="card reveal">
+              <h3>Donation Categories</h3>
+              <ul>
+                <li>Annadanam</li>
+                <li>Temple Construction</li>
+                <li>Festival Seva</li>
+                <li>Goshala Support</li>
+                <li>Book Distribution</li>
+              </ul>
+            </article>
+            <article class="card reveal delay-1">
+              <h3>Payment Details Placeholder</h3>
+              <p>UPI ID, QR image, and bank account details will go here later.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="volunteer">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Volunteer / Join Us</p>
+            <h2>Offer your time in devotional service</h2>
+          </div>
+          <div class="cards three">
+            <article class="card reveal">
+              <h3>Temple Seva</h3>
+              <p>Decoration, prasadam seva, altar support, and event help.</p>
+            </article>
+            <article class="card reveal delay-1">
+              <h3>Outreach Support</h3>
+              <p>Harinam, book distribution, and awareness programs.</p>
+            </article>
+            <article class="card reveal delay-2">
+              <h3>Digital Support</h3>
+              <p>Photography, video editing, poster design, and social updates.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="announcements">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Announcements</p>
+            <h2>Temple notices and updates</h2>
+            <p>This works as a simple news board until you want a full dynamic blog later.</p>
+          </div>
+          <div class="cards two">
+            <article class="card reveal">
+              <h3>Festival Notices</h3>
+              <p>Add upcoming posters, special darshan timings, and seva registration updates here.</p>
+            </article>
+            <article class="card reveal delay-1">
+              <h3>Program Updates</h3>
+              <p>Add class reminders, visiting devotees, and weekly event highlights here.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="container split contact-grid">
+          <div class="reveal">
+            <p class="eyebrow">Contact and Visit</p>
+            <h2>Reach ISKCON Rajampet</h2>
+            <p>
+              Tirupati Road, Old Bustand, Chalapati Complex, 2nd Floor<br />
+              తిరుపతి రోడ్, పాత బస్టాండ్, చలపతి కాంప్లెక్స్, 2వ అంతస్తు
+            </p>
+            <div class="contact-list">
+              <a href="tel:8105473785">Phone: 8105473785</a>
+              <a href="https://wa.me/918105473785" target="_blank" rel="noreferrer">WhatsApp: 8105473785</a>
+              <a href="mailto:iskconrajampet@gmail.com">iskconrajampet@gmail.com</a>
+              <a href="https://maps.app.goo.gl/GRNGwxrHqW1i2C7k7" target="_blank" rel="noreferrer">Google Maps</a>
+            </div>
+          </div>
+          <div class="card social-card reveal delay-1">
+            <h3>Follow ISKCON Rajampet</h3>
+            <div class="actions stacked">
+              <a class="button secondary" href="https://youtube.com/@iskconrajampet?si=tsA4ptAwf8HAzk5S" target="_blank" rel="noreferrer"><img src="assets/images/youtube-logo.svg" alt="YouTube" class="social-icon">YouTube Channel</a>
+              <a class="button secondary" href="https://www.instagram.com/iskconrajampet?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer"><img src="assets/images/instagram-logo.svg" alt="Instagram" class="social-icon">Instagram Page</a>
+              <a class="button secondary" href="mailto:iskconrajampet@gmail.com">Email: iskconrajampet@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <div>
+          <strong>ISKCON Rajampet</strong>
+          <p>International Society for Krishna Consciousness</p>
+        </div>
+        <p>Built as a devotional site concept for Rajampet. <span data-year></span></p>
+      </div>
+    </footer>
+
+    <!-- Hidden YouTube audio player for Hare Krishna Mahamantra -->
+    <iframe width="1" height="1" src="https://www.youtube.com/embed/4wQgOLDXeRw?autoplay=1&mute=1&loop=1&playlist=4wQgOLDXeRw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute; top:-9999px; left:-9999px;"></iframe>
+
+    <script src="assets/js/main.js" type="module"></script>
+  </body>
+</html>
+
+
+
+
+

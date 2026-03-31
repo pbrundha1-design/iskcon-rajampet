@@ -681,6 +681,10 @@ h3 {
   background: linear-gradient(135deg, rgba(255, 111, 168, 0.72), rgba(255, 237, 244, 0.9), rgba(87, 204, 255, 0.54));
 }
 
+#scriptures {
+  background: linear-gradient(135deg, rgba(255, 240, 201, 0.92), rgba(255, 251, 232, 0.95), rgba(212, 237, 255, 0.86));
+}
+
 #contact {
   background: linear-gradient(135deg, rgba(87, 204, 255, 0.74), rgba(233, 249, 255, 0.9), rgba(123, 228, 149, 0.54));
 }
@@ -807,6 +811,10 @@ h3 {
 .calendar-callout {
   background: linear-gradient(135deg, rgba(255, 111, 168, 0.94), rgba(143, 107, 255, 0.92), rgba(29, 111, 214, 0.9));
   color: #fff7eb;
+}
+
+.scripture-card {
+  max-width: 760px;
 }
 
 .calendar-callout p {
@@ -1139,4 +1147,39 @@ video {
   font-weight: 700;
   margin-top: 0.5rem;
   font-size: 0.95rem;
+}
+
+.audio-toggle {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 120;
+  border: 1px solid rgba(248, 201, 62, 0.9);
+  border-radius: 999px;
+  padding: 0.85rem 1.15rem;
+  background: linear-gradient(135deg, rgba(15, 48, 98, 0.96), rgba(29, 111, 214, 0.92));
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 14px 28px rgba(11, 38, 89, 0.34);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.audio-toggle:hover,
+.audio-toggle:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(11, 38, 89, 0.42);
+}
+
+.audio-toggle.is-playing {
+  background: linear-gradient(135deg, rgba(34, 139, 94, 0.96), rgba(46, 204, 113, 0.92));
+}
+
+@media (max-width: 480px) {
+  .audio-toggle {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.92rem;
+  }
 }

@@ -97,6 +97,36 @@
         </div>
       </section>
 
+      <section class="section scripture-section" id="scriptures">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Spiritual Knowledge</p>
+            <h2>The topmost source of spiritual knowledge</h2>
+            <p>
+              A tool designed primarily to research the teachings of His Divine Grace
+              A. C. Bhaktivedanta Swami Prabhupada. Anyone who wants to read books,
+              lectures, and spiritual teachings can visit Vedabase directly.
+            </p>
+          </div>
+          <article class="card scripture-card reveal delay-1">
+            <h3>Read Books on Vedabase</h3>
+            <p>
+              Explore Srila Prabhupada's books and teachings on the official Vedabase website.
+            </p>
+            <div class="actions">
+              <a
+                class="button primary"
+                href="https://vedabase.io/en/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open Vedabase
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="section" id="video-gallery">
         <div class="container">
           <div class="section-heading reveal">
@@ -368,8 +398,13 @@
       </div>
     </footer>
 
-    <!-- Hidden YouTube audio player for Hare Krishna Mahamantra -->
-    <iframe width="1" height="1" src="https://www.youtube.com/embed/4wQgOLDXeRw?autoplay=1&mute=1&loop=1&playlist=4wQgOLDXeRw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute; top:-9999px; left:-9999px;"></iframe>
+    <audio id="spiritual-audio" loop preload="auto">
+      <source src="audio/CD_02-4__Hare_Krsna_Maha_Mantra.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button class="audio-toggle" type="button" data-audio-toggle aria-pressed="false">
+      Play Spiritual Audio
+    </button>
 
     <script src="assets/js/main.js" type="module"></script>
   </body>

@@ -137,13 +137,17 @@ initVideoGallery();
 
 const spiritualAudio = document.getElementById('spiritual-audio');
 let audioReady = false;
+let userInteracted = false;
+let audioStarted = false;
 
 async function startSpiritualAudio() {
-  if (!spiritualAudio || !audioReady) return false;
+  if (!spiritualAudio || !audioReady || audioStarted) return false;
 
   try {
     spiritualAudio.volume = 0.45;
+    spiritualAudio.muted = false;
     await spiritualAudio.play();
+    audioStarted = true;
     return true;
   } catch {
     return false;
@@ -153,16 +157,26 @@ async function startSpiritualAudio() {
 function setupSpiritualAudio() {
   if (!spiritualAudio) return;
 
-  spiritualAudio.addEventListener('canplaythrough', () => {
+  const markAudioReady = () => {
     audioReady = true;
+    if (userInteracted) {
+      startSpiritualAudio();
+      return;
+    }
+
     startSpiritualAudio();
-  });
+  };
+
+  spiritualAudio.addEventListener('loadeddata', markAudioReady);
+  spiritualAudio.addEventListener('canplay', markAudioReady);
+  spiritualAudio.addEventListener('canplaythrough', markAudioReady);
 
   spiritualAudio.addEventListener('error', () => {
     console.warn('Spiritual audio file could not be loaded.');
   });
 
   const retryAudioPlayback = async () => {
+    userInteracted = true;
     const started = await startSpiritualAudio();
     if (started) {
       document.removeEventListener('click', retryAudioPlayback);
@@ -174,9 +188,33 @@ function setupSpiritualAudio() {
   document.addEventListener('click', retryAudioPlayback);
   document.addEventListener('touchstart', retryAudioPlayback);
   document.addEventListener('keydown', retryAudioPlayback);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+      startSpiritualAudio();
+    }
+  });
 
   spiritualAudio.load();
   startSpiritualAudio();
 }
 
 setupSpiritualAudio();
+
+function openGoogleTranslateToTelugu() {
+  const currentUrl = window.location.href;
+  const isLocalPage = ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.protocol === 'file:';
+
+  if (isLocalPage) {
+    window.alert(
+      'Google Translate cannot translate localhost pages directly. Open the deployed website URL and then use this Telugu translation button.'
+    );
+    return;
+  }
+
+  const translateUrl = `https://translate.google.com/translate?sl=auto&tl=te&u=${encodeURIComponent(currentUrl)}`;
+  window.open(translateUrl, '_blank', 'noopener');
+}
+
+for (const translateButton of document.querySelectorAll('[data-translate-te]')) {
+  translateButton.addEventListener('click', openGoogleTranslateToTelugu);
+}

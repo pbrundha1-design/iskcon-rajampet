@@ -720,6 +720,46 @@ h3 {
   position: relative;
 }
 
+.registration-layout,
+.registration-layout {
+  display: grid;
+  gap: 1.2rem;
+}
+.registration-layout {
+  grid-template-columns: 1.2fr 0.9fr;
+  align-items: start;
+}
+
+.registration-layout .section-heading {
+  margin-bottom: 0;
+}
+
+.registration-panel {
+  height: 100%;
+}
+
+.donation-feature {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 240, 209, 0.86), rgba(255, 221, 232, 0.76)),
+    url("../theme-downloads/lotus-flower.jpg") center/cover no-repeat;
+  background-blend-mode: screen;
+}
+
+.donation-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.donation-tags span {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--text-purple);
+  font-weight: 700;
+}
+
 #about {
   background: linear-gradient(135deg, rgba(255, 209, 102, 0.82), rgba(255, 244, 196, 0.88), rgba(255, 181, 167, 0.72));
 }
@@ -755,6 +795,51 @@ h3 {
 .section-heading {
   max-width: 760px;
   margin-bottom: 1.5rem;
+}
+
+.section-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.85fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.section-accent {
+  display: grid;
+  gap: 0.9rem;
+  align-self: stretch;
+}
+
+.section-accent img {
+  width: 100%;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 16px 34px rgba(31, 64, 116, 0.16);
+  object-fit: cover;
+}
+
+.section-intro-scripture .section-accent,
+.section-intro-donate .section-accent,
+.video-accent {
+  grid-template-columns: 1fr 1fr;
+}
+
+.section-intro-scripture .section-accent img,
+.section-intro-donate .section-accent img {
+  min-height: 210px;
+}
+
+.section-intro-video {
+  margin-bottom: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.section-intro-donate {
+  grid-template-columns: 1fr;
+}
+
+.video-accent img {
+  min-height: 150px;
 }
 
 .cards {
@@ -874,6 +959,45 @@ h3 {
 
 .scripture-card {
   max-width: 760px;
+}
+
+.scripture-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.scripture-copy {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.scripture-layout {
+  display: block;
+}
+
+.scripture-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+.scripture-image-frame {
+  width: min(100%, 460px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scripture-image {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 22px 30px rgba(51, 92, 183, 0.18));
 }
 
 .calendar-callout p {
@@ -1021,7 +1145,9 @@ h3 {
   .split,
   .cards.two,
   .cards.three,
-  .cards.four {
+  .cards.four,
+  .section-intro,
+  .registration-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1067,6 +1193,28 @@ h3 {
     min-height: 340px;
   }
 
+  .section-intro-scripture .section-accent,
+  .section-intro-donate .section-accent,
+  .video-accent {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .scripture-content {
+    grid-template-columns: 1fr;
+  }
+
+  .scripture-visual {
+    min-height: auto;
+  }
+
+  .scripture-visual {
+    order: 2;
+  }
+
+  .scripture-image {
+    max-width: 100%;
+  }
+
   body::before,
   body::after {
     width: 20rem;
@@ -1105,9 +1253,9 @@ h3 {
 
 .video-player-container {
   position: relative;
-  width: min(95vw, 420px);
-  max-width: 420px;
-  height: calc(420px * 9 / 16);
+  width: min(92vw, 860px);
+  max-width: 860px;
+  height: calc(860px * 9 / 16);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 10px 28px rgba(31, 64, 116, 0.28);
@@ -1163,7 +1311,9 @@ video {
   }
   
   .video-player-container {
-    max-height: 360px;
+    width: min(94vw, 680px);
+    max-width: 680px;
+    height: calc(680px * 9 / 16);
   }
 }
 
@@ -1173,7 +1323,9 @@ video {
   }
   
   .video-player-container {
-    max-height: 280px;
+    width: min(96vw, 420px);
+    max-width: 420px;
+    height: calc(420px * 9 / 16);
   }
 }
 

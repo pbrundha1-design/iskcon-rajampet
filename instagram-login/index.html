@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Login Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="login-panel">
+        <div class="brand-block">
+          <p class="eyebrow">Demo Project</p>
+          <h1>Instagram Login</h1>
+          <p class="subcopy">
+            Front-end practice project with a mock environment switcher for safe UI testing.
+          </p>
+        </div>
+
+        <form class="login-card">
+          <h2>Log in</h2>
+          <label>
+            <span>Username</span>
+            <input type="text" placeholder="Phone number, username, or email" />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" placeholder="Password" />
+          </label>
+          <button type="button">Log in</button>
+          <p class="helper">This is a demo UI only. It does not submit credentials.</p>
+        </form>
+      </section>
+
+      <aside class="tester-panel">
+        <div class="tester-card">
+          <p class="eyebrow">Safe Mock Tester</p>
+          <h2>Sample IP and Location Profiles</h2>
+          <p class="subcopy">
+            This simulates UI/testing data only. It does not change your real network, IP address, or device location.
+          </p>
+
+          <div class="profile-controls">
+            <label>
+              <span>Choose profile</span>
+              <select id="profile-select"></select>
+            </label>
+            <button id="randomize-btn" type="button">Randomize</button>
+          </div>
+
+          <div class="profile-display">
+            <div>
+              <span class="meta-label">IP Address</span>
+              <strong id="ip-value">-</strong>
+            </div>
+            <div>
+              <span class="meta-label">Location</span>
+              <strong id="location-value">-</strong>
+            </div>
+            <div>
+              <span class="meta-label">Timezone</span>
+              <strong id="timezone-value">-</strong>
+            </div>
+          </div>
+
+          <ul id="profile-list" class="profile-list"></ul>
+        </div>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

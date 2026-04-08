@@ -1,0 +1,115 @@
+{
+  "assets": [
+    {
+      "filename": "kadamba_tree_vrindavan.jpg",
+      "destinations": [
+        "assets/images/kadamba_tree_vrindavan.jpg",
+        "images/kadamba_tree_vrindavan.jpg"
+      ],
+      "size": "1024x1024",
+      "output_format": "jpg",
+      "prompt": "Use case: historical-scene\nAsset type: website devotional nature image\nPrimary request: A detailed close-up of a sacred Kadamba tree in Vrindavan at sunset, its golden-orange blossoms radiating a soft light.\nScene/backdrop: a soft-focus blur of a serene Vrindavan forest\nSubject: sacred Kadamba tree with luminous blossoms\nStyle/medium: photorealistic natural devotional photography\nComposition/framing: detailed close-up with the tree blossoms as the focal point\nLighting/mood: warm sunset glow, peaceful and sacred\nConstraints: no text, no watermark"
+    },
+    {
+      "filename": "peacock_dancing.png",
+      "destinations": [
+        "assets/images/peacock_dancing.png",
+        "images/peacock_dancing.png"
+      ],
+      "size": "1024x1024",
+      "output_format": "png",
+      "background": "transparent",
+      "prompt": "Use case: photorealistic-natural\nAsset type: website overlay image with transparent background\nPrimary request: A magnificent peacock with a full tail fan spread, captured in a graceful dance pose on a mossy stone.\nSubject: dancing peacock with fully spread tail fan\nStyle/medium: highly detailed photorealistic wildlife illustration\nComposition/framing: full-body centered composition with clean edges for overlay placement\nLighting/mood: vibrant iridescent colors, elegant and lively\nConstraints: transparent background, no text, no watermark"
+    },
+    {
+      "filename": "monkeys_playing.jpg",
+      "destinations": [
+        "assets/images/monkeys_playing.jpg",
+        "images/monkeys_playing.jpg"
+      ],
+      "size": "1024x1024",
+      "output_format": "jpg",
+      "prompt": "Use case: photorealistic-natural\nAsset type: website scene image\nPrimary request: A playful and cute scene of a family of three mischievous Vrindavan monkeys swinging and leaping among banyan tree branches, looking happy and curious.\nScene/backdrop: old banyan tree branches in Vrindavan with soft greenery\nSubject: three playful monkeys in motion\nStyle/medium: photorealistic natural wildlife scene\nComposition/framing: medium-wide action composition with clear expressions\nLighting/mood: warm, cheerful daylight\nConstraints: no text, no watermark"
+    },
+    {
+      "filename": "desi_cow_calf.jpg",
+      "destinations": [
+        "assets/images/desi_cow_calf.jpg",
+        "images/desi_cow_calf.jpg"
+      ],
+      "size": "1024x1024",
+      "output_format": "jpg",
+      "prompt": "Use case: photorealistic-natural\nAsset type: website pastoral image\nPrimary request: A beautiful, gentle-eyed Desi cow, Sahiwal breed with a hump, standing peacefully in a lush green pasture, her small calf resting beside her.\nScene/backdrop: lush green pasture with natural rural Vrindavan atmosphere\nSubject: mother Sahiwal cow and resting calf\nStyle/medium: photorealistic pastoral photography\nComposition/framing: full animal composition with tender maternal focus\nLighting/mood: warm maternal lighting, calm and peaceful\nConstraints: no text, no watermark"
+    },
+    {
+      "filename": "gopis_water_pots.jpg",
+      "destinations": [
+        "assets/images/gopis_water_pots.jpg",
+        "images/gopis_water_pots.jpg"
+      ],
+      "size": "1024x1024",
+      "output_format": "jpg",
+      "prompt": "Use case: illustration-story\nAsset type: website devotional scene image\nPrimary request: A group of five graceful Gopis of Vrindavan, dressed in traditional colorful sarees, carrying clay water pots on their heads, walking and laughing together by the Yamuna River bank.\nScene/backdrop: Yamuna River bank with soft natural scenery of Vrindavan\nSubject: five joyful Gopis carrying water pots\nStyle/medium: richly detailed devotional illustration with realistic anatomy and fabric detail\nComposition/framing: full-figure group composition with natural movement\nLighting/mood: golden, graceful, affectionate and lively\nConstraints: no text, no watermark"
+    },
+    {
+      "filename": "little_krishna_friends_butter.jpg",
+      "destinations": [
+        "assets/images/little_krishna_friends_butter.jpg",
+        "images/little_krishna_friends_butter.jpg"
+      ],
+      "size": "1024x1024",
+      "output_format": "jpg",
+      "prompt": "Use case: illustration-story\nAsset type: website playful devotional image\nPrimary request: A charming, playful image of young Little Krishna and his friends, all covered in butter, mischievously eating from a freshly broken clay pot, smiling brightly.\nScene/backdrop: simple village interior of Vrindavan with a playful devotional atmosphere\nSubject: Little Krishna and cowherd boys sharing butter from a broken clay pot\nStyle/medium: detailed devotional painting style illustration\nComposition/framing: medium group composition with expressive faces and the broken pot clearly visible\nLighting/mood: warm, joyful, mischievous and bright\nConstraints: no text, no watermark"
+    },
+    {
+      "filename": "radha_krishna_ashtasakhis.jpg",
+      "destinations": [
+        "assets/images/radha_krishna_ashtasakhis.jpg",
+        "images/radha_krishna_ashtasakhis.jpg"
+      ],
+      "size": "1024x1024",
+      "output_format": "jpg",
+      "prompt": "Use case: illustration-story\nAsset type: website grand devotional palace image\nPrimary request: A magnificent full-palace scene of Radha and Krishna seated on a throne, surrounded by their core eight principal Ashtasakhi gopis, each presenting an offering, full of divine love.\nScene/backdrop: ornate palace court with devotional opulence\nSubject: Radha and Krishna with the eight Ashtasakhis in attendance\nStyle/medium: richly detailed classical devotional painting\nComposition/framing: wide symmetrical palace composition centered on the throne\nLighting/mood: divine, radiant, loving and majestic\nConstraints: no text, no watermark"
+    },
+    {
+      "filename": "ekadasi_fasting_altar.jpg",
+      "destinations": [
+        "assets/images/ekadasi_fasting_altar.jpg",
+        "images/ekadasi_fasting_altar.jpg"
+      ],
+      "size": "1024x1024",
+      "output_format": "jpg",
+      "prompt": "Use case: photorealistic-natural\nAsset type: website altar reference image\nPrimary request: A serene, simplified altar arrangement for Ekadasi. It shows a framed picture of Vishnu, surrounded by fresh fruits, nuts, and tulsi leaves, with all grains visibly absent, glowing with soft candlelight.\nScene/backdrop: simple devotional altar setup\nSubject: Ekadasi altar with fruits, nuts, tulsi leaves and framed Vishnu image\nStyle/medium: photorealistic devotional still life\nComposition/framing: centered altar composition with clean arrangement\nLighting/mood: soft candlelight, serene and pure\nConstraints: no grains visible, no text, no watermark"
+    },
+    {
+      "filename": "guru_parampara_lineage.jpg",
+      "destinations": [
+        "assets/images/guru_parampara_lineage.jpg",
+        "images/guru_parampara_lineage.jpg"
+      ],
+      "size": "1024x1024",
+      "output_format": "jpg",
+      "prompt": "Use case: illustration-story\nAsset type: website spiritual lineage artwork\nPrimary request: A spiritual lineage chart depicted as a flowing, glowing river of light, with small respectful realistic portraits of key acharyas from Srila Prabhupada back to Chaitanya Mahaprabhu connected along the river's path.\nScene/backdrop: luminous spiritual backdrop with a river of light flowing through the composition\nSubject: guru parampara lineage portraits connected along the glowing river\nStyle/medium: devotional painted illustration with realistic respectful portrait treatment\nComposition/framing: infographic-like flowing composition but without text labels\nLighting/mood: sacred, luminous, reverent\nConstraints: no text, no watermark"
+    },
+    {
+      "filename": "shadgoswamis_vrindavan.jpg",
+      "destinations": [
+        "assets/images/shadgoswamis_vrindavan.jpg",
+        "images/shadgoswamis_vrindavan.jpg"
+      ],
+      "size": "1024x1024",
+      "output_format": "jpg",
+      "prompt": "Use case: historical-scene\nAsset type: website devotional heritage image\nPrimary request: A depiction of the Six Goswamis of Vrindavan, seated respectfully under a large banyan tree, absorbed in writing manuscripts on palm leaves, surrounded by the peaceful nature of old Vrindavan.\nScene/backdrop: old Vrindavan natural setting under a large banyan tree\nSubject: the Six Goswamis writing manuscripts on palm leaves\nStyle/medium: detailed historical devotional painting\nComposition/framing: group composition with each Goswami visible and absorbed in writing\nLighting/mood: peaceful, scholarly, sacred\nConstraints: no text, no watermark"
+    },
+    {
+      "filename": "nitai_gauranga_dancing.jpg",
+      "destinations": [
+        "assets/images/nitai_gauranga_dancing.jpg",
+        "images/nitai_gauranga_dancing.jpg"
+      ],
+      "size": "1024x1024",
+      "output_format": "jpg",
+      "prompt": "Use case: illustration-story\nAsset type: website ecstatic kirtan image\nPrimary request: A powerful, dynamic image of Lord Chaitanya, Gauranga, and Lord Nityananda, Nitai, in an ecstatic kirtan dance. Their arms are raised, their bodies sway, and they are surrounded by a blur of joyful devotees chanting, feeling the divine bliss.\nScene/backdrop: devotional kirtan gathering filled with movement and light\nSubject: Nitai and Gauranga dancing in divine ecstasy\nStyle/medium: dynamic devotional painting with rich movement and expressive energy\nComposition/framing: energetic full-figure composition with raised arms and crowd motion around them\nLighting/mood: ecstatic, radiant, devotional bliss\nConstraints: no text, no watermark"
+    }
+  ]
+}

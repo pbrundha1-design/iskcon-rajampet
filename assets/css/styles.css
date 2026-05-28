@@ -661,6 +661,42 @@ h3 {
   box-shadow: 0 16px 30px rgba(23, 76, 121, 0.45);
 }
 
+.hero .actions .button {
+  min-width: 150px;
+  color: #ffffff !important;
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(8, 28, 64, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  box-shadow:
+    0 16px 26px rgba(7, 33, 74, 0.38),
+    inset 0 0 0 999px rgba(0, 0, 0, 0.04);
+}
+
+.hero .actions .button.primary {
+  background: linear-gradient(135deg, #e85f00, #9f3600);
+}
+
+.hero .actions .button:nth-child(2) {
+  background: linear-gradient(135deg, #0f9d58, #065f38);
+}
+
+.hero .actions .button:nth-child(3) {
+  background: linear-gradient(135deg, #006fc9, #003f88);
+}
+
+.hero .actions .button:nth-child(4) {
+  background: linear-gradient(135deg, #1d3f9a, #081f5c);
+}
+
+.hero .actions .translate-hero-button {
+  background: linear-gradient(135deg, #008bbd, #2452b8);
+}
+
+.hero .actions .button:hover,
+.hero .actions .button:focus-visible {
+  filter: saturate(1.08) brightness(1.05);
+}
+
 
 
 .hero-card,
@@ -1033,6 +1069,11 @@ h3 {
   font-weight: 700;
 }
 
+.calendar-message h3 {
+  margin-bottom: 0;
+  color: var(--text-navy);
+}
+
 .media {
   min-height: 220px;
   background:
@@ -1157,6 +1198,7 @@ h3 {
 
   .nav-wrap {
     position: relative;
+    gap: 0.55rem;
   }
 
   .nav-links {
@@ -1175,9 +1217,13 @@ h3 {
   }
 
   .translate-button {
-    width: 100%;
+    width: auto;
+    flex: 0 0 auto;
     justify-content: center;
     text-align: center;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.88rem;
+    white-space: nowrap;
   }
 
   .nav-links.open {

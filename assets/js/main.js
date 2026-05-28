@@ -7,42 +7,81 @@ if (navToggle && nav) {
   });
 }
 
-const festivals = [
-  {
-    date: 'March 15, 2026',
-    title: 'Papamochani Ekadasi',
-    description: 'Ekadasi observance with chanting, kirtan, scriptural hearing, and devotional reflection.'
-  },
-  {
-    date: 'March 19, 2026',
-    title: 'Ugadi Devotional Gathering',
-    description: 'A Telugu New Year-themed satsang with prayers, prasadam, and community blessings.'
-  },
-  {
-    date: 'March 27, 2026',
-    title: 'Sri Rama Navami Celebration',
-    description: 'Festival kirtan, spiritual discourse, and special seva opportunities for devotees and visitors.'
-  },
-  {
-    date: 'March 29, 2026',
-    title: 'Kamada Ekadasi',
-    description: 'A focused day of japa, fasting, and evening satsang based on the Vaishnava calendar reference.'
-  }
-];
-
 const festivalList = document.querySelector('[data-festival-list]');
 if (festivalList) {
-  festivalList.innerHTML = festivals
-    .map(
-      (festival) => `
-        <article class="festival-item reveal">
-          <time datetime="${festival.date}">${festival.date}</time>
-          <h3>${festival.title}</h3>
-          <p>${festival.description}</p>
-        </article>
-      `
-    )
-    .join('');
+  const calendarSource = document.querySelector('[data-calendar-source]');
+  const currentMonth = new Date();
+  const monthFormatter = new Intl.DateTimeFormat('en-IN', { month: 'long', year: 'numeric' });
+  const dateFormatter = new Intl.DateTimeFormat('en-IN', { month: 'long', day: 'numeric', year: 'numeric' });
+
+  function renderCalendarMessage(message) {
+    festivalList.innerHTML = '';
+    const item = document.createElement('article');
+    item.className = 'festival-item reveal calendar-message';
+    const title = document.createElement('h3');
+    title.textContent = message;
+    item.appendChild(title);
+    festivalList.appendChild(item);
+  }
+
+  function renderFestivalEvents(events) {
+    festivalList.innerHTML = '';
+    events.forEach((festival) => {
+      const item = document.createElement('article');
+      item.className = 'festival-item reveal';
+
+      const time = document.createElement('time');
+      time.dateTime = festival.date;
+      time.textContent = dateFormatter.format(new Date(`${festival.date}T00:00:00+05:30`));
+
+      const title = document.createElement('h3');
+      title.textContent = festival.title;
+
+      item.append(time, title);
+
+      if (festival.description) {
+        const description = document.createElement('p');
+        description.textContent = festival.description;
+        item.appendChild(description);
+      }
+
+      festivalList.appendChild(item);
+    });
+  }
+
+  async function loadVaishnavaCalendar() {
+    renderCalendarMessage(`Loading ${monthFormatter.format(currentMonth)} updates...`);
+
+    try {
+      const response = await fetch('data/vaishnava-calendar.json', { cache: 'no-store' });
+      if (!response.ok) throw new Error('Calendar data unavailable');
+
+      const calendar = await response.json();
+      const currentYear = currentMonth.getFullYear();
+      const currentMonthIndex = currentMonth.getMonth();
+      const monthlyEvents = (calendar.events || []).filter((event) => {
+        const eventDate = new Date(`${event.date}T00:00:00+05:30`);
+        return eventDate.getFullYear() === currentYear && eventDate.getMonth() === currentMonthIndex;
+      });
+
+      if (calendarSource && calendar.sourceUrl) {
+        calendarSource.href = calendar.sourceUrl;
+        calendarSource.textContent = `Open ${calendar.location || 'Vaishnava'} Calendar`;
+      }
+
+      if (monthlyEvents.length === 0) {
+        renderCalendarMessage(`No Vaishnava calendar updates found for ${monthFormatter.format(currentMonth)}.`);
+        return;
+      }
+
+      renderFestivalEvents(monthlyEvents);
+    } catch (error) {
+      console.warn(error);
+      renderCalendarMessage('Vaishnava calendar updates are temporarily unavailable.');
+    }
+  }
+
+  loadVaishnavaCalendar();
 }
 
 for (const yearNode of document.querySelectorAll('[data-year]')) {

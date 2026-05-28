@@ -1,0 +1,31 @@
+name: Update Vaishnava Calendar
+
+on:
+  schedule:
+    - cron: "30 0 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-calendar:
+    name: Fetch monthly calendar data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Fetch Vaishnava calendar events
+        run: python tools/update_vaishnava_calendar.py
+
+      - name: Commit updated calendar data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update Vaishnava calendar data"
+          file_pattern: data/vaishnava-calendar.json

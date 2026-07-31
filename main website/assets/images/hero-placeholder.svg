@@ -1,0 +1,10 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#F6E4C4"/>
+  <circle cx="970" cy="180" r="130" fill="#E5B36A" fill-opacity="0.45"/>
+  <circle cx="860" cy="260" r="220" fill="#D17A39" fill-opacity="0.15"/>
+  <path d="M0 610C170 530 270 560 400 624C530 688 668 746 850 704C976 674 1087 595 1200 540V900H0V610Z" fill="#8C4B2B" fill-opacity="0.88"/>
+  <path d="M560 540C560 438 642 356 744 356C846 356 928 438 928 540V620H560V540Z" fill="#FFF7E6" fill-opacity="0.22"/>
+  <path d="M610 620H878L860 732H628L610 620Z" fill="#FFF7E6" fill-opacity="0.22"/>
+  <text x="70" y="170" fill="#7B2D10" font-size="58" font-family="Georgia, serif">Temple Photo Area</text>
+  <text x="70" y="228" fill="#7B2D10" font-size="30" font-family="Segoe UI, sans-serif">Replace this with a Rajampet temple or deity image</text>
+</svg>

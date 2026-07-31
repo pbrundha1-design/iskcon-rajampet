@@ -1,0 +1,10 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="240" rx="120" fill="#FFF7E6"/>
+  <circle cx="120" cy="120" r="102" stroke="#B5541B" stroke-width="4"/>
+  <circle cx="120" cy="120" r="88" stroke="#CDA24F" stroke-width="2"/>
+  <path d="M120 48C108 72 100 90 100 108C100 126 110 142 120 158C130 142 140 126 140 108C140 90 132 72 120 48Z" fill="#B5541B"/>
+  <path d="M120 88C115 98 112 106 112 114C112 124 116 132 120 139C124 132 128 124 128 114C128 106 125 98 120 88Z" fill="#FFF7E6"/>
+  <path d="M70 150C88 162 104 168 120 168C136 168 152 162 170 150" stroke="#758A49" stroke-width="8" stroke-linecap="round"/>
+  <text x="120" y="197" text-anchor="middle" fill="#7B2D10" font-size="20" font-family="Georgia, serif" font-weight="700">ISKCON</text>
+  <text x="120" y="216" text-anchor="middle" fill="#7B2D10" font-size="14" font-family="Segoe UI, sans-serif">RAJAMPET</text>
+</svg>

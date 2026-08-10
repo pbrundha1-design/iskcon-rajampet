@@ -1,0 +1,11 @@
+body{font-family:system-ui,Segoe UI,Arial; margin:0;padding:20px;background:#f6fbff;color:#14213d}
+.wrap{max-width:760px;margin:auto}
+.panel{background:#fff;padding:16px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.08);margin-bottom:16px}
+h1{font-size:1.4rem;margin-top:0}
+form{display:flex;flex-direction:column;gap:8px}
+label{font-weight:600;font-size:.95rem}
+input,textarea,button{padding:10px;border-radius:10px;border:1px solid #d7e4f3;font-size:1rem}
+textarea{min-height:90px;resize:vertical}
+button{background:#1f6fd6;color:#fff;border:none;font-weight:700;margin-top:6px}
+.result{margin-top:10px;font-size:.9rem;white-space:pre-wrap;color:#35516f}
+small{display:block;margin-top:12px;color:#444}

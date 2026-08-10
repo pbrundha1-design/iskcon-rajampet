@@ -1,11 +1,6 @@
 const adminButton = document.getElementById('admin-button');
 if (adminButton) {
-  let lastTap = 0;
   adminButton.addEventListener('click', () => {
-    const now = Date.now();
-    if (now - lastTap < 400) {
-      window.location.href = '/admin/login';
-    }
-    lastTap = now;
+    window.location.href = 'https://iskconrajampet.org/admin/login';
   });
 }

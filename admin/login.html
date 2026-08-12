@@ -10,7 +10,7 @@
   <main class="wrap">
     <section class="panel">
       <h1>Admin Login</h1>
-      <p>Select one of the approved emails, enter the shared password, and then enter the OTP sent to that email.</p>
+      <p>Select one of the approved emails and enter the shared password to continue.</p>
       <form method="post" action="/admin/login">
         <label>Email</label>
         <select name="email" required>
@@ -20,8 +20,6 @@
         </select>
         <label>Password</label>
         <input name="password" type="password" value="RadhaKrishna@rjpt12" required />
-        <label>OTP</label>
-        <input name="otp" type="text" placeholder="Enter OTP" />
         <button type="submit">Login</button>
       </form>
     </section>

@@ -17,7 +17,7 @@ for path in [PHOTOS_FILE, EVENTS_FILE]:
         with open(path, 'w', encoding='utf-8') as f:
             json.dump([], f, ensure_ascii=False, indent=2)
 
-app = Flask(__name__, static_folder=os.path.join(MAIN_SITE, 'admin'), static_url_path='/admin')
+app = Flask(__name__, static_folder=None)
 app.secret_key = 'iskcon-admin-secret-key'
 SHARED_PASSWORD = 'RadhaKrishna@rjpt12'
 ALLOWED_EMAILS = {
@@ -38,6 +38,21 @@ def admin_index():
     if not session.get('admin_logged_in'):
         return redirect('/admin/login')
     return send_from_directory(os.path.join(MAIN_SITE, 'admin'), 'index.html')
+
+
+@app.route('/admin')
+def admin_index_no_slash():
+    return redirect('/admin/')
+
+
+@app.route('/admin/index.html')
+def admin_index_html():
+    return redirect('/admin/')
+
+
+@app.route('/admin/login.html')
+def admin_login_html():
+    return redirect('/admin/login')
 
 
 def generate_otp():
@@ -75,34 +90,20 @@ def admin_login():
     if request.method == 'POST':
         email = request.form.get('email', '').strip().lower()
         password = request.form.get('password', '').strip()
-        otp = request.form.get('otp', '').strip()
 
         if email not in ALLOWED_EMAILS or password != SHARED_PASSWORD:
             return jsonify({'error': 'Access denied'}), 401
 
-        if not otp:
-            otp_value = generate_otp()
-            session['pending_email'] = email
-            session['pending_otp'] = otp_value
-            session['pending_time'] = time.time()
-            _, message = send_otp_email(email, otp_value)
-            return jsonify({'status': 'otp_sent', 'message': message})
-
-        stored_otp = session.get('pending_otp')
-        stored_time = session.get('pending_time', 0)
-        if not stored_otp or time.time() - stored_time > OTP_EXPIRY_SECONDS:
-            return jsonify({'error': 'OTP expired. Please request a new one.'}), 401
-        if otp != stored_otp or session.get('pending_email') != email:
-            return jsonify({'error': 'Invalid OTP'}), 401
-
         session['admin_logged_in'] = True
         session['admin_email'] = email
-        session.pop('pending_otp', None)
-        session.pop('pending_time', None)
-        session.pop('pending_email', None)
-        return jsonify({'status': 'ok'})
+        return redirect('/admin/')
 
     return send_from_directory(os.path.join(MAIN_SITE, 'admin'), 'login.html')
+
+
+@app.route('/admin/style.css')
+def admin_style():
+    return send_from_directory(os.path.join(MAIN_SITE, 'admin'), 'style.css')
 
 
 @app.route('/admin/logout')

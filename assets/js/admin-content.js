@@ -11,7 +11,7 @@ async function renderAdminContent() {
     const gallery = document.getElementById('gallery-grid');
     if (gallery) {
       if (photos.length) {
-        gallery.innerHTML = photos
+        gallery.insertAdjacentHTML('beforeend', photos
           .map((photo) => {
             const name = escapeHtml(photo.name || photo.caption || 'Temple photo');
             const caption = escapeHtml(photo.caption || '');
@@ -23,9 +23,7 @@ async function renderAdminContent() {
               </article>
             `;
           })
-          .join('');
-      } else {
-        gallery.innerHTML = '<p class="muted">No photos have been uploaded yet.</p>';
+          .join(''));
       }
     }
 

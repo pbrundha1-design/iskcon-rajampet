@@ -1,6 +1,50 @@
 const navToggle = document.querySelector('[data-nav-toggle]');
 const nav = document.querySelector('[data-nav]');
 
+const janmashtamiAlbums = [
+  ['Gopuja', 'Gopuja', ['IMG_0134.JPG', 'IMG_0136.JPG', 'IMG_0140.JPG', 'IMG_0145.JPG', 'IMG_0147.JPG', 'IMG_0151.JPG']],
+  ['Kirtan', 'Kirtan', ['IMG_0168.JPG', 'IMG_0326.JPG', 'IMG_0333.JPG', 'IMG_0356.JPG', 'IMG_0378.JPG']],
+  ['Maha Shankha Abhishekam', 'Maha Shankha Abhishekam', ['IMG_0165.JPG', 'IMG_0171.JPG', 'IMG_0183.JPG', 'IMG_0188.JPG', 'IMG_0203.JPG', 'IMG_0214.JPG', 'IMG_0229.JPG', 'IMG_0234.JPG', 'IMG_0246.JPG', 'IMG_0250.JPG', 'IMG_0277.JPG', 'IMG_0284.JPG', 'IMG_0291.JPG', 'IMG_0293.JPG', 'IMG_0294.JPG', 'IMG_0295.JPG']],
+  ['Prasadam', 'Prasadam', ['IMG_0015.JPG', 'IMG_0021.JPG', 'IMG_0024.JPG', 'IMG_0030.JPG']],
+  ['Sri Sri Radha Krishna', 'Sri Sri Radha Krishna', ['IMG_0004.JPG', 'IMG_0005.JPG', 'IMG_0063.JPG', 'IMG_0123.JPG', 'IMG_0359.JPG', 'IMG_0365.JPG', 'IMG_0368.JPG']],
+  ['Srila Prabhupada Book Distribution', 'Srila Prabhupada Book Distribution', ['IMG_0034.JPG', 'IMG_0035.JPG']],
+  ['Utlotsav', 'Utlotsav', ['IMG_0273.JPG']],
+  ['Youth Preaching', 'Youth Preaching', ['20260904_210233.jpg', '20260904_210308.jpg', '20260904_211514.jpg.jpeg', '20260904_211540.jpg.jpeg', '20260904_212547.jpg', '20260904_212614.jpg', '20260904_212628.jpg', '20260904_212825.jpg', 'IMG_0002.JPG']]
+];
+
+function initJanmashtamiAlbums() {
+  const albumsContainer = document.querySelector('[data-janmashtami-albums]');
+  if (!albumsContainer) return;
+
+  janmashtamiAlbums.forEach(([topic, folder, photos]) => {
+    const album = document.createElement('article');
+    album.className = 'janmashtami-album';
+    album.innerHTML = `<h3>${topic}</h3><div class="janmashtami-slider"></div>`;
+    const slider = album.querySelector('.janmashtami-slider');
+
+    photos.forEach((photo, index) => {
+      const image = document.createElement('img');
+      image.src = `Sri Krishna Janmashtami 2026/${folder}/${photo}`;
+      image.alt = `${topic} photo ${index + 1}`;
+      image.classList.toggle('active', index === 0);
+      slider.appendChild(image);
+    });
+    albumsContainer.appendChild(album);
+
+    if (photos.length > 1) {
+      let currentPhoto = 0;
+      setInterval(() => {
+        const sliderPhotos = slider.querySelectorAll('img');
+        sliderPhotos[currentPhoto].classList.remove('active');
+        currentPhoto = (currentPhoto + 1) % sliderPhotos.length;
+        sliderPhotos[currentPhoto].classList.add('active');
+      }, 3500);
+    }
+  });
+}
+
+initJanmashtamiAlbums();
+
 if (navToggle && nav) {
   navToggle.addEventListener('click', () => {
     nav.classList.toggle('open');

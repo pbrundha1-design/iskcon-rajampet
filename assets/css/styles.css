@@ -816,6 +816,42 @@ h3 {
   background: linear-gradient(135deg, rgba(255, 111, 168, 0.72), rgba(255, 237, 244, 0.9), rgba(87, 204, 255, 0.54));
 }
 
+.janmashtami-section {
+  background: linear-gradient(135deg, rgba(255, 209, 102, 0.72), rgba(255, 244, 196, 0.9), rgba(123, 228, 149, 0.54));
+}
+
+.janmashtami-albums {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.janmashtami-album h3 {
+  margin-bottom: 1rem;
+}
+
+.janmashtami-slider {
+  position: relative;
+  height: min(58vw, 480px);
+  min-height: 240px;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #17213d;
+}
+
+.janmashtami-slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.janmashtami-slider img.active {
+  opacity: 1;
+}
+
 #scriptures {
   background: linear-gradient(135deg, rgba(255, 240, 201, 0.92), rgba(255, 251, 232, 0.95), rgba(212, 237, 255, 0.86));
 }

@@ -26,6 +26,9 @@ function initJanmashtamiAlbums() {
       const image = document.createElement('img');
       image.src = `Sri Krishna Janmashtami 2026/${folder}/${photo}`;
       image.alt = `${topic} photo ${index + 1}`;
+      image.loading = index === 0 ? 'eager' : 'lazy';
+      image.decoding = 'async';
+      if (index === 0) image.fetchPriority = 'high';
       image.classList.toggle('active', index === 0);
       slider.appendChild(image);
     });

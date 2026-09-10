@@ -12,6 +12,57 @@ const janmashtamiAlbums = [
   ['Youth Preaching', 'Youth Preaching', ['20260904_210233.jpg', '20260904_210308.jpg', '20260904_211514.jpg.jpeg', '20260904_211540.jpg.jpeg', '20260904_212547.jpg', '20260904_212614.jpg', '20260904_212628.jpg', '20260904_212825.jpg', 'IMG_0002.JPG']]
 ];
 
+function openSiteLightbox(src, altText = '') {
+  const overlay = document.createElement('div');
+  overlay.className = 'site-lightbox-overlay';
+  overlay.style.position = 'fixed';
+  overlay.style.inset = '0';
+  overlay.style.backgroundColor = 'rgba(11, 23, 50, 0.9)';
+  overlay.style.display = 'flex';
+  overlay.style.flexDirection = 'column';
+  overlay.style.alignItems = 'center';
+  overlay.style.justifyContent = 'center';
+  overlay.style.cursor = 'zoom-out';
+  overlay.style.zIndex = '99999';
+  overlay.style.padding = '16px';
+  overlay.style.backdropFilter = 'blur(6px)';
+
+  const fullImg = document.createElement('img');
+  fullImg.src = src;
+  fullImg.alt = altText;
+  fullImg.style.maxWidth = '94vw';
+  fullImg.style.maxHeight = '88vh';
+  fullImg.style.objectFit = 'contain';
+  fullImg.style.borderRadius = '12px';
+  fullImg.style.boxShadow = '0 16px 45px rgba(0, 0, 0, 0.75)';
+  fullImg.style.border = '2px solid rgba(255, 255, 255, 0.2)';
+
+  const caption = document.createElement('div');
+  caption.textContent = altText || 'Tap anywhere to close';
+  caption.style.color = '#fff';
+  caption.style.marginTop = '12px';
+  caption.style.fontSize = '0.92rem';
+  caption.style.fontWeight = '600';
+  caption.style.textAlign = 'center';
+  caption.style.textShadow = '0 1px 4px rgba(0,0,0,0.8)';
+
+  overlay.appendChild(fullImg);
+  overlay.appendChild(caption);
+  document.body.appendChild(overlay);
+
+  const closeHandler = () => {
+    overlay.remove();
+    document.removeEventListener('keydown', keyHandler);
+  };
+
+  const keyHandler = (e) => {
+    if (e.key === 'Escape') closeHandler();
+  };
+
+  overlay.addEventListener('click', closeHandler);
+  document.addEventListener('keydown', keyHandler);
+}
+
 function initJanmashtamiAlbums() {
   const albumsContainer = document.querySelector('[data-janmashtami-albums]');
   if (!albumsContainer) return;
@@ -32,17 +83,39 @@ function initJanmashtamiAlbums() {
       image.classList.toggle('active', index === 0);
       slider.appendChild(image);
     });
-    albumsContainer.appendChild(album);
 
     if (photos.length > 1) {
+      const badge = document.createElement('div');
+      badge.className = 'slider-badge';
+      badge.textContent = `1/${photos.length}`;
+      slider.appendChild(badge);
+
       let currentPhoto = 0;
       setInterval(() => {
         const sliderPhotos = slider.querySelectorAll('img');
         sliderPhotos[currentPhoto].classList.remove('active');
         currentPhoto = (currentPhoto + 1) % sliderPhotos.length;
         sliderPhotos[currentPhoto].classList.add('active');
+        badge.textContent = `${currentPhoto + 1}/${sliderPhotos.length}`;
       }, 3500);
     }
+
+    slider.addEventListener('click', () => {
+      const activeImg = slider.querySelector('img.active') || slider.querySelector('img');
+      if (activeImg) {
+        openSiteLightbox(activeImg.src, activeImg.alt);
+      }
+    });
+
+    albumsContainer.appendChild(album);
+  });
+
+  // Enable click-to-zoom on main gallery cards too
+  document.querySelectorAll('.photo-card img').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', () => {
+      openSiteLightbox(img.src, img.alt);
+    });
   });
 }
 

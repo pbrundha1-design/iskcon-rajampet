@@ -822,20 +822,42 @@ h3 {
 
 .janmashtami-albums {
   display: grid;
-  gap: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.janmashtami-album {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 1.25rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 24px rgba(31, 64, 116, 0.12);
+  display: flex;
+  flex-direction: column;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.janmashtami-album:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(31, 64, 116, 0.2);
 }
 
 .janmashtami-album h3 {
-  margin-bottom: 1rem;
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  text-align: center;
+  color: var(--text-purple);
 }
 
 .janmashtami-slider {
   position: relative;
-  height: min(58vw, 480px);
-  min-height: 240px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: 200px;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 0.85rem;
   background: #17213d;
+  cursor: pointer;
 }
 
 .janmashtami-slider img {
@@ -843,13 +865,27 @@ h3 {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
 
 .janmashtami-slider img.active {
   opacity: 1;
+}
+
+.janmashtami-slider .slider-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  z-index: 2;
+  pointer-events: none;
 }
 
 #scriptures {
@@ -933,8 +969,8 @@ h3 {
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
 }
 
 .photo-card {
@@ -1297,10 +1333,82 @@ h3 {
     max-width: 100%;
   }
 
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+
+  .janmashtami-albums {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+
+  .janmashtami-album {
+    padding: 0.65rem;
+    border-radius: 0.95rem;
+  }
+
+  .janmashtami-album h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .janmashtami-slider {
+    min-height: 160px;
+  }
+
   body::before,
   body::after {
     width: 20rem;
     height: 20rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .photo-card {
+    min-height: 190px;
+  }
+
+  .photo-card img {
+    height: 135px;
+  }
+
+  .photo-card h3 {
+    font-size: 0.88rem;
+    margin: 0.35rem 0.5rem;
+  }
+
+  .photo-card p {
+    font-size: 0.78rem;
+    margin: 0 0.5rem 0.5rem;
+  }
+
+  .janmashtami-albums {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .janmashtami-album {
+    padding: 0.45rem;
+    border-radius: 0.75rem;
+  }
+
+  .janmashtami-album h3 {
+    font-size: 0.82rem;
+    margin-bottom: 0.35rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .janmashtami-slider {
+    aspect-ratio: 1 / 1;
+    min-height: 135px;
   }
 }
 

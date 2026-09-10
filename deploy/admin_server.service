@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve ISKCON Rajampet admin
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/iskcon_rajampet
+Environment="PATH=/var/www/iskcon_rajampet/venv/bin"
+ExecStart=/var/www/iskcon_rajampet/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:5000 tools.admin_server:app
+
+[Install]
+WantedBy=multi-user.target

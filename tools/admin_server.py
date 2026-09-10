@@ -18,8 +18,9 @@ for path in [PHOTOS_FILE, EVENTS_FILE]:
             json.dump([], f, ensure_ascii=False, indent=2)
 
 app = Flask(__name__, static_folder=None)
-app.secret_key = 'iskcon-admin-secret-key'
-SHARED_PASSWORD = 'RadhaKrishna@rjpt12'
+# Allow overriding secret values via environment variables for hosted deployments
+app.secret_key = os.getenv('SECRET_KEY', 'iskcon-admin-secret-key')
+SHARED_PASSWORD = os.getenv('SHARED_PASSWORD', 'RadhaKrishna@rjpt12')
 ALLOWED_EMAILS = {
     'pseenu303@gmail.com',
     'iskconrajampet@gmail.com',
@@ -179,6 +180,13 @@ def api_photos():
 def api_events():
     with open(EVENTS_FILE, 'r', encoding='utf-8') as fh:
         return jsonify(json.load(fh))
+
+
+@app.errorhandler(405)
+def method_not_allowed(e):
+    # Log the method and path for easier debugging when a 405 occurs
+    print(f'405 Method Not Allowed: {request.method} {request.path}')
+    return jsonify({'error': 'Method Not Allowed', 'method': request.method, 'path': request.path}), 405
 
 
 if __name__ == '__main__':

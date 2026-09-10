@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "name": "Test Photo",
+    "caption": "Dummy caption",
+    "filename": "test.jpg",
+    "url": "assets/images/test.jpg"
+  },
+  {
+    "name": "Test Photo",
+    "caption": "Dummy caption",
+    "filename": "test.jpg",
+    "url": "assets/images/test.jpg"
+  }
+]

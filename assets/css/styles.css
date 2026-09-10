@@ -1,34 +1,41 @@
 :root {
-  --bg: #e8f4ff;
-  --surface: rgba(245, 248, 254, 0.93);
-  --surface-strong: rgba(238, 244, 255, 0.97);
-  --text: #0f1f45;
-  --muted: #1f4074;
-  --primary: #1b4f9b;
-  --primary-dark: #13346d;
-  --gold: #f8c845;
-  --green: #26ad9d;
-  --purple: #655bbe;
-  --pink: #f68fa0;
-  --blue: #1f6fd6;
-  --border: rgba(31, 64, 116, 0.2);
-  --shadow: 0 16px 40px rgba(31, 64, 116, 0.16);
+  --bg: #fffdf5;
+  --surface: rgba(255, 253, 245, 0.95);
+  --surface-strong: rgba(255, 255, 255, 0.98);
+  --text: #1a1528;
+  --muted: #332a45;
+  --primary: #c43800; /* Deep Sacred Saffron / Kesari */
+  --primary-dark: #8c2500;
+  --gold: #f59e0b; /* Temple Pitambara Gold */
+  --gold-glow: #fbbf24;
+  --green: #15803d; /* Sacred Tulsi Green */
+  --purple: #6d28d9; /* Devotional Royal Violet */
+  --pink: #db2777; /* Radha Rani Lotus Pink */
+  --blue: #0284c7; /* Shyamasundara Peacock Blue */
+  --peacock-blue: #0c356a;
+  --peacock-teal: #0174be;
+  --peacock-emerald: #10b981;
+  --saffron-bright: #ff6f00;
+  --marigold: #f97316;
+  --chandan: #fefae0;
+  --border: rgba(245, 158, 11, 0.35);
+  --shadow: 0 16px 40px rgba(196, 56, 0, 0.14);
   --radius: 24px;
   --content: 1180px;
-  --text-orange: #d96c06;
-  --text-green: #1f9d55;
-  --text-red: #c0392b;
-  --text-blue: #1d6fd6;
-  --text-navy: #1f3a5f;
-  --text-pink: #d94f8a;
-  --text-purple: #7b4ed9;
-  --text-teal: #0f8b8d;
-  --sunrise: #7db6ff;
-  --lotus: #6fa8ff;
-  --sky: #0a99ff;
-  --lime: #7be495;
-  --violet: #8f6bff;
-  --amber: #ffd166;
+  --text-orange: #ea580c;
+  --text-green: #16a34a;
+  --text-red: #b91c1c;
+  --text-blue: #0284c7;
+  --text-navy: #1e3a8a;
+  --text-pink: #be185d;
+  --text-purple: #6d28d9;
+  --text-teal: #0d9488;
+  --sunrise: #f59e0b;
+  --lotus: #f43f5e;
+  --sky: #0284c7;
+  --lime: #65a30d;
+  --violet: #7c3aed;
+  --amber: #f59e0b;
 }
 
 * {
@@ -45,12 +52,33 @@ body {
   color: var(--text);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(33, 105, 194, 0.28), transparent 32%),
-    radial-gradient(circle at top right, rgba(14, 73, 162, 0.30), transparent 34%),
-    radial-gradient(circle at bottom left, rgba(16, 81, 162, 0.24), transparent 36%),
-    linear-gradient(120deg, #d9e9ff 0%, #c8ddff 22%, #a9d0f9 50%, #9dbcf0 74%, #e6f2ff 100%);
-  background-size: 120% 120%;
+    radial-gradient(circle at top left, rgba(255, 111, 0, 0.22), transparent 36%),
+    radial-gradient(circle at top right, rgba(12, 53, 106, 0.26), transparent 38%),
+    radial-gradient(circle at center right, rgba(219, 39, 119, 0.16), transparent 36%),
+    radial-gradient(circle at bottom left, rgba(21, 128, 61, 0.18), transparent 36%),
+    linear-gradient(135deg, #fffcf5 0%, #fff7ed 22%, #fef3c7 48%, #eff6ff 76%, #fdf2f8 100%);
+  background-size: 140% 140%;
   animation: pageGlow 18s ease-in-out infinite alternate;
+}
+
+.top-mantra-bar {
+  background: linear-gradient(90deg, #991b1b, #c2410c, #d97706, #0c356a, #c2410c, #991b1b);
+  background-size: 250% 100%;
+  animation: mantraShimmer 10s linear infinite;
+  color: #fffde7;
+  text-align: center;
+  padding: 0.42rem 0.8rem;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid #fbbf24;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+@keyframes mantraShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 250% 50%; }
 }
 
 .hero {
@@ -145,23 +173,28 @@ code {
   top: 0;
   z-index: 100;
   backdrop-filter: blur(12px);
-  background: linear-gradient(90deg, rgba(15, 48, 98, 0.90), rgba(23, 58, 137, 0.85));
-  border-bottom: 1px solid rgba(248, 201, 62, 0.34);
-  box-shadow: 0 10px 24px rgba(11, 38, 89, 0.45);
+  background: linear-gradient(90deg, #071e3d 0%, #0c356a 45%, #071e3d 100%);
+  border-bottom: 2px solid #f59e0b;
+  box-shadow: 0 8px 24px rgba(7, 30, 61, 0.45);
 }
 
-.site-header .brand-text strong,
+.site-header .brand-text strong {
+  color: #fbbf24 !important;
+}
+
 .site-header .brand-text span {
-  color: #f8e26e;
+  color: #38bdf8 !important;
 }
 
-.nav-links a {
-  color: #eef6ff;
+.site-header .nav-links a {
+  color: #fefae0 !important;
+  font-weight: 700;
 }
 
-.nav-links a:hover,
-.nav-links a:focus-visible {
-  color: #ffe48a;
+.site-header .nav-links a:hover,
+.site-header .nav-links a:focus-visible {
+  color: #fde047 !important;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
 }
 
 
@@ -376,10 +409,11 @@ code {
   justify-content: flex-start;
   border-radius: 32px;
   overflow: hidden;
+  border: 2px solid rgba(245, 158, 11, 0.45);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(238, 246, 255, 0.52)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(255, 251, 235, 0.72)),
     url("../../images/background_image.jpg") center center / cover no-repeat;
-  box-shadow: 0 22px 50px rgba(31, 64, 116, 0.18);
+  box-shadow: 0 22px 50px rgba(194, 65, 12, 0.16);
 }
 
 .hero-copy::before {
@@ -387,8 +421,8 @@ code {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.42)),
-    radial-gradient(circle at top, rgba(255, 214, 153, 0.18), transparent 42%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.48)),
+    radial-gradient(circle at top, rgba(255, 214, 153, 0.22), transparent 42%);
   pointer-events: none;
   z-index: 0;
 }
@@ -400,14 +434,16 @@ code {
 
 .eyebrow {
   display: inline-flex;
-  padding: 0.5rem 0.9rem;
+  padding: 0.45rem 1rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #f8c845, #ffd699, #7db6ff);
-  color: #0f1f45;
+  background: linear-gradient(135deg, #fef3c7, #fed7aa);
+  color: #9a3412;
+  border: 1px solid #fdba74;
   font-size: 0.85rem;
-  font-weight: 700;
-  box-shadow: 0 8px 16px rgba(31, 64, 116, 0.15);
-  animation: shimmer 5.5s linear infinite;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.16);
+  text-transform: uppercase;
 }
 
 h1,
@@ -435,19 +471,20 @@ h3 {
 }
 
 .site-header .brand-text strong {
-  color: var(--text-red);
+  color: #fbbf24 !important;
 }
 
 .site-header .brand-text span {
-  color: var(--text-blue);
+  color: #38bdf8 !important;
 }
 
-.nav-links a:nth-child(odd) {
-  color: var(--text-purple);
+.site-header .nav-links a {
+  color: #fefae0 !important;
 }
 
-.nav-links a:nth-child(even) {
-  color: var(--text-teal);
+.site-header .nav-links a:hover,
+.site-header .nav-links a:focus-visible {
+  color: #fde047 !important;
 }
 
 .section-heading h2,
@@ -636,29 +673,31 @@ h3 {
 }
 
 .button.primary {
-  background: linear-gradient(135deg, rgba(61, 123, 209, 0.96), rgba(56, 109, 189, 0.96));
-  color: white;
-  box-shadow: 0 14px 28px rgba(14, 46, 108, 0.36);
-  border: 1px solid rgba(249, 215, 92, 0.95);
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: white !important;
+  box-shadow: 0 10px 24px rgba(194, 65, 12, 0.35);
+  border: 1px solid #fbbf24;
 }
 
 .button.primary:hover,
 .button.primary:focus-visible {
-  background: linear-gradient(145deg, rgba(90, 146, 226, 0.98), rgba(52, 118, 202, 0.98));
-  box-shadow: 0 16px 32px rgba(12, 36, 89, 0.52);
+  background: linear-gradient(145deg, #f97316 0%, #ea580c 100%);
+  box-shadow: 0 14px 28px rgba(194, 65, 12, 0.45);
+  border-color: #fde047;
 }
 
 .button.secondary {
-  background: linear-gradient(135deg, rgba(28, 129, 217, 0.95), rgba(41, 169, 231, 0.86), rgba(111, 133, 227, 0.84));
-  border: 1px solid rgba(122, 199, 255, 0.45);
-  color: white;
-  box-shadow: 0 14px 24px rgba(7, 44, 88, 0.30);
+  background: linear-gradient(135deg, #0c356a 0%, #0284c7 100%);
+  border: 1px solid rgba(251, 191, 36, 0.55);
+  color: white !important;
+  box-shadow: 0 10px 22px rgba(12, 53, 106, 0.28);
 }
 
 .button.secondary:hover,
 .button.secondary:focus-visible {
-  background: linear-gradient(145deg, rgba(41, 154, 229, 1), rgba(97, 157, 234, 0.95));
-  box-shadow: 0 16px 30px rgba(23, 76, 121, 0.45);
+  background: linear-gradient(145deg, #0f4c81 0%, #0369a1 100%);
+  box-shadow: 0 14px 28px rgba(12, 53, 106, 0.4);
+  border-color: #fbbf24;
 }
 
 .hero .actions .button {
@@ -703,11 +742,32 @@ h3 {
 .card,
 .calendar-callout {
   border-radius: var(--radius);
-  border: 1px solid var(--border);
+  border: 1px solid #fed7aa;
   background: var(--surface-strong);
   box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
+}
+
+.card {
+  border-top: 4px solid #f59e0b;
+  background: #ffffff;
+}
+
+.cards .card:nth-child(4n + 1) {
+  border-top-color: #ea580c;
+}
+
+.cards .card:nth-child(4n + 2) {
+  border-top-color: #16a34a;
+}
+
+.cards .card:nth-child(4n + 3) {
+  border-top-color: #0284c7;
+}
+
+.cards .card:nth-child(4n) {
+  border-top-color: #db2777;
 }
 
 .hero-card::before,
@@ -727,10 +787,13 @@ h3 {
   min-height: 360px;
   max-height: 460px;
   overflow: hidden;
+  border: 2px solid #f59e0b;
+  border-radius: 32px;
+  box-shadow: 0 20px 45px rgba(234, 88, 12, 0.22);
   background:
-    linear-gradient(180deg, rgba(51, 26, 13, 0.08), rgba(51, 26, 13, 0.5)),
-    radial-gradient(circle at top left, rgba(255, 179, 71, 0.42), transparent 40%),
-    radial-gradient(circle at bottom right, rgba(87, 204, 255, 0.38), transparent 42%),
+    linear-gradient(180deg, rgba(51, 26, 13, 0.08), rgba(51, 26, 13, 0.55)),
+    radial-gradient(circle at top left, rgba(245, 158, 11, 0.45), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(12, 53, 106, 0.45), transparent 42%),
     url("../images/temple2.jpg.jpg") center/cover no-repeat;
   display: grid;
   align-items: end;
@@ -797,27 +860,39 @@ h3 {
 }
 
 #about {
-  background: linear-gradient(135deg, rgba(255, 209, 102, 0.82), rgba(255, 244, 196, 0.88), rgba(255, 181, 167, 0.72));
+  background: linear-gradient(135deg, rgba(255, 152, 0, 0.28), rgba(255, 248, 225, 0.9), rgba(255, 179, 0, 0.25));
+  border-top: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+#timings {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.35), rgba(255, 251, 235, 0.92), rgba(249, 115, 22, 0.25));
+  border-top: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 #activities {
-  background: linear-gradient(135deg, rgba(123, 228, 149, 0.78), rgba(222, 255, 233, 0.88), rgba(87, 204, 255, 0.58));
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(236, 253, 245, 0.92), rgba(2, 132, 199, 0.2));
+  border-top: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 #festivals {
-  background: linear-gradient(135deg, rgba(255, 111, 168, 0.78), rgba(255, 219, 235, 0.88), rgba(255, 209, 102, 0.6));
+  background: linear-gradient(135deg, rgba(219, 39, 119, 0.22), rgba(255, 247, 237, 0.92), rgba(245, 158, 11, 0.28));
+  border-top: 1px solid rgba(219, 39, 119, 0.3);
 }
 
 #donate {
-  background: linear-gradient(135deg, rgba(143, 107, 255, 0.74), rgba(239, 233, 255, 0.9), rgba(255, 179, 71, 0.52));
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.32), rgba(255, 251, 235, 0.94), rgba(234, 88, 12, 0.22));
+  border-top: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 #gallery {
-  background: linear-gradient(135deg, rgba(255, 111, 168, 0.72), rgba(255, 237, 244, 0.9), rgba(87, 204, 255, 0.54));
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.22), rgba(255, 241, 242, 0.92), rgba(14, 165, 233, 0.2));
+  border-top: 1px solid rgba(244, 63, 94, 0.3);
 }
 
 .janmashtami-section {
-  background: linear-gradient(135deg, rgba(255, 209, 102, 0.72), rgba(255, 244, 196, 0.9), rgba(123, 228, 149, 0.54));
+  background: linear-gradient(135deg, rgba(12, 53, 106, 0.3), rgba(255, 248, 225, 0.92), rgba(245, 158, 11, 0.35));
+  border-top: 3px solid #f59e0b;
+  border-bottom: 3px solid #f59e0b;
 }
 
 .janmashtami-albums {
@@ -827,26 +902,30 @@ h3 {
 }
 
 .janmashtami-album {
-  background: rgba(255, 255, 255, 0.92);
+  background: #ffffff;
   border-radius: 1.25rem;
   padding: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 10px 24px rgba(31, 64, 116, 0.12);
+  border: 1px solid #fed7aa;
+  border-top: 4px solid #ea580c;
+  box-shadow: 0 10px 24px rgba(194, 65, 12, 0.1);
   display: flex;
   flex-direction: column;
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
 
 .janmashtami-album:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(31, 64, 116, 0.2);
+  box-shadow: 0 16px 36px rgba(234, 88, 12, 0.22);
+  border-color: #f59e0b;
 }
 
 .janmashtami-album h3 {
   margin: 0 0 0.75rem;
   font-size: 1.15rem;
   text-align: center;
-  color: var(--text-purple);
+  color: #9a3412;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 
 .janmashtami-slider {
@@ -889,11 +968,13 @@ h3 {
 }
 
 #scriptures {
-  background: linear-gradient(135deg, rgba(255, 240, 201, 0.92), rgba(255, 251, 232, 0.95), rgba(212, 237, 255, 0.86));
+  background: linear-gradient(135deg, rgba(254, 240, 138, 0.4), rgba(255, 251, 235, 0.95), rgba(186, 230, 253, 0.35));
+  border-top: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 #contact {
-  background: linear-gradient(135deg, rgba(87, 204, 255, 0.74), rgba(233, 249, 255, 0.9), rgba(123, 228, 149, 0.54));
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.25), rgba(255, 247, 237, 0.92), rgba(249, 115, 22, 0.28));
+  border-top: 1px solid rgba(249, 115, 22, 0.3);
 }
 
 .section.alt {
@@ -978,10 +1059,11 @@ h3 {
   border-radius: var(--radius);
   overflow: hidden;
   min-height: 220px;
-  border: 1px solid var(--border);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.48), rgba(255, 230, 242, 0.3), rgba(223, 247, 255, 0.32));
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  border: 1px solid #fed7aa;
+  border-top: 4px solid #f59e0b;
+  box-shadow: 0 10px 24px rgba(194, 65, 12, 0.1);
+  background: #ffffff;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
 
 .photo-card img {
@@ -1168,7 +1250,23 @@ h3 {
 }
 
 .site-footer {
-  padding: 1rem 0 2.5rem;
+  padding: 2.5rem 0 3rem;
+  background: linear-gradient(135deg, #3b0d0d 0%, #6c1f0b 45%, #3d1205 100%);
+  border-top: 3px solid #f59e0b;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.site-footer::before {
+  content: "🙏 हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे । हरे राम हरे राम राम राम हरे हरे 🙏";
+  display: block;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #fef08a;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .footer-wrap {
@@ -1176,10 +1274,11 @@ h3 {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
-  padding: 1.4rem;
+  padding: 1.5rem 2rem;
   border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: linear-gradient(145deg, rgba(255, 251, 246, 0.9), rgba(255, 235, 245, 0.82), rgba(233, 249, 255, 0.82));
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
 }
 
 .reveal {
